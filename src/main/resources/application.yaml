@@ -1,0 +1,17 @@
+
+server:
+  port: 8080
+eureka:
+  instance:
+    appname: eureka-server
+    hostname: 192.168.1.104
+  client:
+    #不注册自己
+    register-with-eureka: false
+    #只维护服务实例，不去检索服务
+    fetch-registry: false
+    service-url:
+     defaultZone : http://${eureka.instance.hostname}:${server.port}/eureka
+spring:
+  application:
+    name: galaxy
